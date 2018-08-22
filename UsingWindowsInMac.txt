@@ -1,0 +1,24 @@
+Virtual machine software above Mac OS:
+
+- The following two fine but not free 
+    https://www.parallels.com/  or 
+    http://www.vmware.com/
+
+- The free one with less features 
+    https://www.virtualbox.org/wiki/Downloads 
+    
+- For a new Macbook with enough disk space, see Boot Camp Assistant
+    https://support.apple.com/guide/bootcamp-assistant/install-windows-on-your-newer-mac-bcmp173b3bf2/mac
+ 
+- How to select a different startup disk: 
+    https://support.apple.com/en-us/HT202796
+
+You need to install Virtual machine, then install Windows, then install VS. 
+  - You have to make sure the settings of Hardware Virtualization: Enable VT-x/AMD-V checked
+
+If you are not a system expert, my suggestion is to simply use a PC in Windows, either desktop or laptop.
+You also can make use of the CS lab where VS 2017 was installed
+
+
+
+
