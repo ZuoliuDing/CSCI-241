@@ -1,0 +1,56 @@
+Please read very carefully all the guide at Conversion_between_Binary_and_Decimal. especially
+
+    The difference between a C-string and a char array. C-string is a zero-terminated char array
+    For a C-string, you can directly use it in cin and cout. Don’t set a loop to input/output for each char
+    If not understood well, search on-line such as
+        C strings and C++ strings
+        C-style strings in C++
+        Lesson 9: C Strings
+    Avoid using mixed cin>>someVar and get()/getline() in this assignment.
+        See What's the Difference between getline and cin? 
+
+
+Here is more help if needed:
+- Don't change the function prototypes:
+
+int BinToDec(char* s);
+char* DecToBin(int n);
+
+that are required.
+
+- For the n-char C-string, how many char must be allocated?
+
+- Case 1 doesn’t need a dynamic allocation, you can simply make a C_String as a char array like:
+   char bin[C_StringSizeYouWant];
+   // Then get input to call BinToDec(bin)
+if not necessary, don't use dynamic allocation
+
+- The case 2 for DecToBin(), you do need a dynamic memory allocation.
+ 
+    Within DecToBin(), you have to
+        create a dynamic array with correct size
+        fill each char with a bit char '0' or '1' in the array,
+        make it as a C-String by manually adding a terminator
+        return that char pointer
+    The caller in main() must
+        take over the char pointer,
+        output with the pointer as a C-String,
+        release that memory.
+
+    See the similar pattern to an example here
+         www.cplusplus.com/forum/beginner/73114/
+
+
+For Twos_Complement_with_Hexadecimal:
+
+- Don't use dynamic allocation. Simply use C-String, as the same concern to Conversion_between_Binary_and_Decimal.
+
+- The number conversions between hexadecimal and decimal:
+
+    Consider ASCII code with an algorithm like
+        for a ch '0' to '9', simply get
+            intVal = ch - '0' 
+        for a ch 'A' to 'F', simply get
+            intVal = ch - 'A' +10 
+
+similarly consider opposite way of conversions from intVal to ch
